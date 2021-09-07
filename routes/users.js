@@ -1,23 +1,43 @@
 import express from 'express';
-const rounter = express.Router();
+const router = express.Router();
 
 
 const users = [
 
     {
-        irstName: "Md. Atikur",
+        firstName: "Md. Atikur",
         lastNamr: "Rahman",
-        age: 25
+        age: 30
+    },
+    {
+        firstName: "Md. Nazmul",
+        lastNamr: "Ahsan",
+        age: 30
+
+
     }
 
 ]
 
 
 
-rounter.get('/',(req,res) => {
+router.get('/',(req,res) => {
+
+  console.log(users);
+
+  res.send(users);
+ // console.log(users[0].age);
 
   res.send('Users Route')
 
 });
 
-export default rounter;
+
+router.post('/',(req,res)=>{
+
+
+
+
+});
+
+export default router;
