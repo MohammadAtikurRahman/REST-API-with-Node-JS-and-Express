@@ -3,7 +3,7 @@ const router = express.Router();
 
 import { v4 as uuidv4 } from 'uuid';
 
-const users = [
+let users = [
     // {
     //     firstName: "Md. Atikur",
     //     lastNamr: "Rahman",
@@ -54,7 +54,16 @@ router.get('/:id', (req ,res) => {
   
 });
 
-router.delete()
+router.delete('/:id', (req,res) => {
+
+    const { id } = req.params;
+
+    users = users.filter((user) => user.id ==! id);
+
+    res.send(`USer with the id  ${id} deleted from the database`);
+
+
+})
 
 
 
