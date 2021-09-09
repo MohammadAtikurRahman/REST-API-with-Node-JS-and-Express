@@ -33,20 +33,31 @@ router.post('/', (req,res) => {
         users.push({ ...user, id: uuidv4() });
 
    //     console.log('Post Route Reached');
-    res.send(`User with the name ${user.firstName} added to the database ` );
+        res.send(`User with the name ${user.firstName} added to the database ` );
    
 });
 
 
 router.get('/:id', (req ,res) => {
 
+    const  { id }  = req.params;
 
-    console.log(req.params); 
+
+    //console.log(req.params); 
+
+   const foundUser = users.find((user) => user.id === id);
 
 
-    res.send(req.params);
+            res.send(foundUser);
+    //res.send(req.params);
    // res.send('THE GET ID ROUTE');
   
 });
+
+router.delete()
+
+
+
+
 
 export default router;
