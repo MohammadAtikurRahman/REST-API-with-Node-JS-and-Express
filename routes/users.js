@@ -16,10 +16,14 @@ const users = [
 router.get('/',(req,res) => {
   console.log(users);
   res.send(users);
-  res.send('Users Route')
+  //res.send('Users Route')
 
 });
-router.post('/',(req,res)=>{
+router.post('/', (req,res) => {
+
+    console.log('post route reached');
+    res.send('post route reached');
+   
 });
 
 export default router;
