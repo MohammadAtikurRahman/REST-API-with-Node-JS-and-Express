@@ -40,7 +40,12 @@ router.post('/', (req,res) => {
 
 router.get('/:id', (req ,res) => {
 
-    res.send('THE GET ID ROUTE');
+
+    console.log(req.params); 
+
+
+    res.send(req.params);
+   // res.send('THE GET ID ROUTE');
   
 });
 
